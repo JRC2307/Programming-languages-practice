@@ -1,0 +1,19 @@
+#lang racket
+
+;;Power with head recursion
+(define (power-head a b)
+  (cond
+    ((= b 1) a)
+    ((= b 0) 1)
+    (else (* a ( power-head a(- b 1))))
+    ))
+
+;;Power with tail recursion
+(define (power-tail a b)
+  (power-tail-two x y 1))
+
+ (define (power-tail-two a b tot)
+   (cond
+     ((= y 0) tot)
+     (else (power-tail-two x(- y 1)(* x tot)))
+     ))
